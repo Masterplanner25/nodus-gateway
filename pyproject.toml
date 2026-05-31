@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=80", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nodus-gateway"
+version = "0.1.0"
+description = "WebSocket coordination hub: handler registry, job cache, event broadcast, client"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Masterplanner25" }]
+dependencies = [
+  "nodus-protocol>=0.1.0", "nodus-session>=0.1.0", "nodus-router>=0.1.0",
+  "nodus-channels>=0.1.0", "nodus-agent>=0.1.0", "nodus-events>=0.1.0",
+  "websockets>=12.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0", "pytest-asyncio>=0.21"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nodus_gateway*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
