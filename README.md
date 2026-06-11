@@ -7,7 +7,7 @@ send `RequestEnvelope` / `ResponseEnvelope` / `EventEnvelope` messages.
 Provides handler dispatch, idempotency caching, event broadcasting, and an
 async client. No required dependencies — WebSocket transport is optional.
 
-> **Status:** v0.1.0 — prepared, not yet published.
+> **Status:** v0.1.0 — published on [PyPI](https://pypi.org/project/nodus-gateway/).
 
 ---
 
