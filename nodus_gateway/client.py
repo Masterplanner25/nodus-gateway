@@ -32,10 +32,10 @@ class GatewayClient:
 
     async def connect(self) -> None:
         try:
-            import websockets  # noqa: PLC0415
+            import websockets.asyncio.client  # noqa: PLC0415
         except ImportError as exc:
-            raise ImportError("websockets required. pip install nodus-gateway") from exc
-        self._ws = await websockets.connect(self._url)
+            raise ImportError("websockets required. pip install nodus-gateway[websockets]") from exc
+        self._ws = await websockets.asyncio.client.connect(self._url)
         # Start background receiver
         asyncio.create_task(self._receive_loop())
         logger.info("[GatewayClient] connected to %s", self._url)
