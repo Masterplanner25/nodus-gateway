@@ -118,10 +118,10 @@ class GatewayServer:
         """Start the WebSocket server (non-blocking — returns when server is ready)."""
         if not _WS_AVAILABLE:
             raise ImportError(
-                "websockets package required. Install with: pip install nodus-gateway"
+                "websockets package required. Install with: pip install nodus-gateway[websockets]"
             )
-        import websockets.server  # noqa: PLC0415
-        self._server = await websockets.server.serve(
+        import websockets.asyncio.server  # noqa: PLC0415
+        self._server = await websockets.asyncio.server.serve(
             self.handle_connection,
             self._host,
             self._port,
