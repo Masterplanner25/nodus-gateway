@@ -9,6 +9,27 @@ Versioning: [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.1.1] — 2026-07-12
+
+### Fixed
+
+- **Migrated to the `websockets.asyncio` API.** `GatewayClient` and
+  `GatewayServer` used the deprecated top-level `websockets.connect` /
+  `websockets.server.serve` entry points, which were removed in `websockets`
+  14+. They now use `websockets.asyncio.client.connect` and
+  `websockets.asyncio.server.serve`, so the package works against current
+  `websockets` releases.
+
+### Changed
+
+- **`websockets` extra pinned to `>=14.0,<17`** (was `>=12.0`) — 14.0 is the
+  first release with the `asyncio` API; upper bound guards against a future
+  breaking major.
+- Install hints now point at the `nodus-gateway[websockets]` extra rather than
+  bare `nodus-gateway`.
+
+---
+
 ## [0.1.0] — 2026-05-31
 
 Initial release.
