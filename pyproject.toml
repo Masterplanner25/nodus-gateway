@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nodus-gateway"
-version = "0.1.0"
+version = "0.1.1"
 description = "WebSocket coordination hub: handler registry, job cache, event broadcast, client"
 authors = [{ name = "Shawn Knight" }]
 license = { text = "MIT" }
